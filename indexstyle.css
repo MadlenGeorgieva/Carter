@@ -1,5 +1,5 @@
 /* Reset for consistency */
-body, html {
+html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -9,29 +9,21 @@ body, html {
 body {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* or center if you want vertical centering too */
+    align-items: flex-start; /* or center for vertical centering */
     background: #fff;
 }
 
 /* Wrapper to control width */
 main {
-    max-width: 500px; /* Same as in the screenshot’s mobile look */
+    max-width: 500px;
     width: 100%;
-    text-align: center; /* Centers text like CARTER headline */
+    text-align: center;
 }
 
 /* Headline */
 h1 {
     font-size: 6rem;
-    margin: 60px;
-}
-
-/* Images full width */
-section img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    margin: 60px 0;
 }
 
 /* Sections */
@@ -44,99 +36,69 @@ hr {
     margin: 30px 0;
 }
 
-/* buttons */
-.menu-button {
-  position: relative; /* creates positioning context */
-  display: inline-block; /* shrink-wraps around the image */
+/* Buttons with images */
+.menu-button,
+.shop-button,
+.gallery-button {
+    position: relative;
+    display: inline-block;
 }
 
-.menu-button img {
-  display: block;
-  width: 100%; /* optional: makes image responsive */
-  height: auto;
+.menu-button img,
+.shop-button img,
+.gallery-button img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
-.menu-button h2 {
-  position: absolute;
-  bottom: 20px;   /* distance from bottom edge */
-  right: 20px;    /* distance from right edge */
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-  margin: 0;
+.menu-button h2,
+.shop-button h2,
+.gallery-button h2 {
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    margin: 0;
 }
 
-.shop-button {
-  position: relative; /* creates positioning context */
-  display: inline-block; /* shrink-wraps around the image */
-}
-
-.shop-button img {
-  display: block;
-  width: 100%; /* optional: makes image responsive */
-  height: auto;
+.menu-button h2,
+.gallery-button h2 {
+    right: 20px;
 }
 
 .shop-button h2 {
-  position: absolute;
-  bottom: 20px;   /* distance from bottom edge */
-  left: 20px;     /* distance from left edge */
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-  margin: 0;
+    left: 20px;
 }
 
 /* About Us */
-.about-us h2{
+.about-us h2 {
     text-align: right;
 }
 
-.paragraph-1{
-    max-width: 600px;  /* limit how wide the text spreads */
-    margin: 0 auto;    /* keeps it centered as a block */
+.paragraph-1,
+.paragraph-2 {
+    max-width: 600px;
+    margin: 0 auto 1rem;
+    line-height: 1.6;
+}
+
+.paragraph-1 {
     text-align: left;
-    margin-bottom: 1rem;
-    line-height: 1.6;
 }
 
-.paragraph-2{
-    max-width: 600px;  /* limit how wide the text spreads */
-    margin: 0 auto;    /* keeps it centered as a block */
+.paragraph-2 {
     text-align: right;
-    margin-bottom: 1rem;
-    line-height: 1.6;
 }
 
-.gallery-button{
-  position: relative; /* creates positioning context */
-  display: inline-block; /* shrink-wraps around the image */
-}
-
-.gallery-button img {
-  display: block;
-  width: 100%; /* optional: makes image responsive */
-  height: auto;
-}
-
-.gallery-button h2 {
-  position: absolute;
-  bottom: 20px;   /* distance from bottom edge */
-  right: 20px;    /* distance from right edge */
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-  margin: 0;
-}
-
-.find-us h2{
+/* Find Us */
+.find-us h2 {
     text-align: right;
     margin-bottom: 60px;
 }
 
-.find-us p{
+.find-us p {
     text-align: left;
 }
