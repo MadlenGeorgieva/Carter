@@ -44,6 +44,7 @@ hr {
     margin: 30px 0;
 }
 
+/* buttons */
 .menu-button {
   position: relative; /* creates positioning context */
   display: inline-block; /* shrink-wraps around the image */
@@ -88,6 +89,11 @@ hr {
   margin: 0;
 }
 
+/* About Us */
+.about-us h2{
+    text-align: right;
+}
+
 .paragraph-1{
     max-width: 600px;  /* limit how wide the text spreads */
     margin: 0 auto;    /* keeps it centered as a block */
@@ -102,4 +108,34 @@ hr {
     text-align: right;
     margin-bottom: 1rem;
     line-height: 1.6;
+}
+
+.gallery-button{
+  position: relative; /* creates positioning context */
+  display: inline-block; /* shrink-wraps around the image */
+}
+
+.gallery-button img {
+  display: block;
+  width: 100%; /* optional: makes image responsive */
+  height: auto;
+}
+
+.gallery-button h2 {
+  position: absolute;
+  bottom: 20px;   /* distance from bottom edge */
+  right: 20px;    /* distance from right edge */
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+  margin: 0;
+}
+
+.find-us h2{
+    text-align: right;
+}
+
+.find-us p{
+    text-align: left;
 }
