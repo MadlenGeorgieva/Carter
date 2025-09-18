@@ -5,32 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>carter</title>
     <link rel="stylesheet" href="indexstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+       <main>
 
-    <header class="header">
-        <div class="top-nav">
-            <div id="myLinks">
-                <a href="index.html">Home</a>
-                <a href="menu.html">Menu</a>
-            </div>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-            </a>
-        </div>
-    </header>
-    <main>
-        <!-- Headline -->
+    <div class="topnav">
         <h1>CARTER</h1>
+    <div id="myLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="https://carterstore.dk/shop/">Shop</a>
+        <a href="events.html">Gallery & Events</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+        <!-- Headline -->
+   
         <!-- Buttons -->
-        <section class="menu-button">
-            <img src="images/menu-button.jpg" alt="menu-button">
-            <h2>MENU</h2>
+       <section class="menu-button">
+            <a href="menu.html">
+                <img src="images/menu-button.jpg" alt="menu-button">
+                <h2>MENU</h2>
+            </a>
         </section>
+
         <section class="shop-button">
+             <a href="https://carterstore.dk/shop/">
             <img src="images/shop-button.jpg" alt="shop-button">
             <h2>SHOP</h2>
+            </a>
         </section>
          <!-- About Us Section -->
         <section class="about-us">
@@ -51,8 +57,10 @@
         </section>
         <!-- Buttons -->
         <section class="gallery-button">
+            <a href="events.html">
             <img src="images/Event-2.jpg" alt="gallery-button">
             <h2>GALLERY AND EVENTS</h2>
+            </a>
         </section>
         <!-- Find Us -->
          <section class="find-us">
@@ -77,5 +85,16 @@
             <!-- List Elements -->
         </ul>
     </main>
+      <script>
+/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+    </script>
 </body>
 </html>
