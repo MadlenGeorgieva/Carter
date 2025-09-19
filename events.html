@@ -28,17 +28,40 @@
 </div>
 <!--I'm shoving the pictures in here, zero idea what I'm doing-->
     <section class="events-pictures">
-        <img src="images/events-1-shrunk.png">
-        <img src="images/events-button.png">
-        <img src="images/barista-2-shrunk.png">
+        <div class="event-container">
+        <img src="images/events-1-shrunk.png" alt="events-1">
+        <p class="event-description">Join us for an immersive coffee tasting experience where you’ll 
+            discover the subtle flavors of beans from around the world. Our expert baristas will guide 
+            you through brewing techniques and aroma profiles. Perfect for coffee lovers of all levels!"</p>
+        </div>
+        <div class="event-container">
+        <img src="images/events-button.png" alt="events-button">
+        <p class="event-description">Description for event 2 goes here.</p>
+        </div>
+        <div class="event-container">
+        <img src="images/barista-2-shrunk.png" alt="barista-2">
+        <p class="event-description">Description for event 3 goes here.</p>
+        </div>
     </section>
 
     <!-- Gallery Section-->
     <h1>GALLERY</h1>
     <section class="gallery-pictures">
-        <img src="images/barista-shrunk.png">
-        <img src="images/drink-shelve-shrunk.png">
-        <img src="images/gallery-1-shrunk.png">
+        <div class="event-container">
+        <a href="images/barista-shrunk.png" target="_blank">
+        <img src="images/barista-shrunk.png" alt="barista">
+        </a>
+        </div>
+         <div class="event-container">
+        <a href="images/drink-shelve-shrunk.png" target="_blank">
+        <img src="images/drink-shelve-shrunk.png" alt="drink-shelve">
+        </a>
+        </div>
+         <div class="event-container">
+        <a href="images/gallery-1-shrunk.png" target="_blank">
+        <img src="images/gallery-1-shrunk.png" alt="gallery-1">
+        </a>
+        </div>
     </section>
 
      <!-- Footer Line Separater -->
@@ -65,6 +88,13 @@ function myFunction() {
     x.style.display = "block";
   }
 }
+
+document.querySelectorAll(".event-container img").forEach(img => {
+    img.addEventListener("click", () => {
+      const container = img.parentElement;
+      container.classList.toggle("active");
+    });
+  });
     </script>
 </body>
 </html>

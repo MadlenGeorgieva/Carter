@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
 }
 
 /* Centering everything */
@@ -26,11 +27,12 @@ footer{
 
 /* Headline */
 h1 {
-    font-size: 6rem;
+    font-size: 100px;
     margin: 60px 0;
     letter-spacing: -15px;
     font-weight: 100;
 }
+
 
 /* Sections */
 .space {
@@ -56,7 +58,7 @@ hr {
     position: absolute;
     bottom: 20px;
     color: #086B3B;
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: 100;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
     margin: 0;
@@ -67,7 +69,7 @@ hr {
     position: absolute;
     bottom: 20px;
     color: #F76622;
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: 100;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
     margin: 0;
@@ -96,7 +98,7 @@ hr {
 .paragraph-1,
 .paragraph-2 {
     max-width: 600px;
-    margin: 0 auto 1rem;
+    margin: 0 auto 16px;
     line-height: 1.6;
 }
 
