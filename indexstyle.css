@@ -52,12 +52,21 @@ hr {
     height: auto;
 }
 
-.menu-button h2,
+.menu-button h2{
+     position: absolute;
+    bottom: 20px;
+    color: #086B3B;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    margin: 0;
+}
+
 .shop-button h2,
 .gallery-button h2 {
     position: absolute;
     bottom: 20px;
-    color: white;
+    color: #F76622;
     font-size: 2rem;
     font-weight: bold;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
@@ -143,4 +152,8 @@ hr {
 .active {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
+}
+
+.nav{
+    margin-top: 100px;
 }

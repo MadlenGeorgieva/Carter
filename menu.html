@@ -5,8 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>menu</title>
     <link rel="stylesheet" href="menustyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    
+       <main>
+
+    <div class="topnav">
+        <h1>MENU</h1>
+    <div id="myLinks">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="https://carterstore.dk/shop/">Shop</a>
+        <a href="events.html">Gallery & Events</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+    </div>
+
+    <section class="menu-1">
+        <img src="images/coffee-1.jpg" alt="coffee-1" class="coffee-1">
+        <p>Cappuccino    49<br>Latte                   53<br>Matcha              56
+        </p>
+    </section>
+
+
+
+
+
+    <script>
+/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+    </script>
 </body>
 </html>
