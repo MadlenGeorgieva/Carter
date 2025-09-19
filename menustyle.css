@@ -39,7 +39,7 @@ hr {
 .menu-1{
   display: flex;           /* puts image + text side by side */
   align-items: center;   
-  padding-bottom: 150px;  /* vertically align to middle */
+  padding-bottom: 50px;  /* vertically align to middle */
 }
 
 .coffee-1{
@@ -53,15 +53,8 @@ hr {
   display: flex;
   align-items: center;       /* vertical middle */
   flex-direction: row-reverse; /* flip order: image goes right */
- padding-bottom: 150px;  /* vertically align to middle */
+ padding-bottom: 50px;  /* vertically align to middle */
  gap: 20px;
-}
-
-.coffee-2 {
-  float: right;       /* push image to the left */
-  margin-right: 15px; /* add space between image and text */
-  width: 233px;
-  height: 179px;
 }
 
 .menu-text {
