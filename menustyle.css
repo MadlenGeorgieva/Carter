@@ -72,6 +72,36 @@ header h3 a{
   color: black;
 }
 
+/* Footer Styling */
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+footer .footer-content p {
+    margin: 0;
+    text-align: left;
+    flex: 1;
+     line-height: 1.5; /* Add this line for spacing */
+}
+
+footer .footer-content ul {
+   list-style: disc;      /* show bullet points */
+    padding-left: 20px;    /* add space for bullets */
+    margin: 0;
+    text-align: left;      /* align text to the left */
+    flex: 0 0 auto;
+}
+
+footer .footer-content ul li {
+    margin-bottom: 8px;
+}
+
 
 
 /* HAMBURGER MENU */
