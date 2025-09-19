@@ -20,6 +20,10 @@ main {
     text-align: center;
 }
 
+footer{
+    margin-top: 90px;
+}
+
 /* Headline */
 h1 {
     font-size: 6rem;
