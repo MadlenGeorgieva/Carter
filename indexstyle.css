@@ -29,8 +29,8 @@ h1 {
 }
 
 /* Sections */
-section {
-    margin: 20px 0;
+.space {
+    margin: 50px 0;
 }
 
 /* Footer */
