@@ -9,34 +9,52 @@
 </head>
 <body>
        <main>
-        <!-- HAMBURGER -->
+        <header>
+           <h3><a href="index.html">CARTER</a></h3>
+        </header>
+
     <div class="topnav">
         
-    <div id="myLinks" class="nav">
+    <div id="myLinks">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="https://carterstore.dk/shop/">Shop</a>
         <a href="events.html">Gallery & Events</a>
     </div>
+    
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
     </a>
-    <h1>EVENTS</h1>
-</div>
-<!--I'm shoving the pictures in here, zero idea what I'm doing-->
-    <section class="events-pictures">
-        <img src="images/events-1-shrunk.png">
-        <img src="images/events-button.png">
-        <img src="images/barista-2-shrunk.png">
-    </section>
+    <h1>Events & Gallery</h1>
+    </div>
+
+    <div class="events-pictures">
+    <div class="event-item">
+        <img src="images/events-1-shrunk.png" id="events-1" class="clickable">
+        <div class="description" style="display: none;">
+            <p>Welcome party in Basement</p>
+        </div>
+    </div>
+    <div class="event-item">
+        <img src="images/events-button.png" id="events-2" class="clickable">
+        <div class="description" style="display: none;">
+            <p>This is the description of the event!</p>
+        </div>
+    </div>
+    <div class="event-item">
+        <img src="images/barista-2-shrunk.png" id="events-3" class="clickable">
+        <div class="description" style="display: none;">
+            <p>This is the description of the event!</p>
+        </div>
+    </div>
 
     <!-- Gallery Section-->
     <h1>GALLERY</h1>
-    <section class="gallery-pictures">
+    <div class="gallery-pictures">
         <img src="images/barista-shrunk.png">
         <img src="images/drink-shelve-shrunk.png">
         <img src="images/gallery-1-shrunk.png">
-    </section>
+    </div>
 
      <!-- Footer Line Separater -->
         <footer>
@@ -62,6 +80,13 @@ function myFunction() {
     x.style.display = "block";
   }
 }
+
+   const eventImg = document.getElementById('events-1');
+const descriptionBox = eventImg.nextElementSibling; // gets the description div right after the image
+
+eventImg.addEventListener('click', () => {
+    descriptionBox.style.display = descriptionBox.style.display === 'none' ? 'block' : 'none';
+});
     </script>
 </body>
 </html>
