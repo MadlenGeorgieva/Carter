@@ -24,6 +24,8 @@ main {
 h1 {
     font-size: 6rem;
     margin: 60px 0;
+    letter-spacing: -15px;
+    
 }
 
 /* Sections */
@@ -47,7 +49,7 @@ hr {
 
 
 .menu-button h2{
-     position: absolute;
+    position: absolute;
     bottom: 20px;
     color: #086B3B;
     font-size: 2rem;
