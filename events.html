@@ -12,56 +12,38 @@
         <header>
            <h3><a href="index.html">CARTER</a></h3>
         </header>
-
+        <!-- HAMBURGER -->
     <div class="topnav">
         
-    <div id="myLinks">
+    <div id="myLinks" class="nav">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="https://carterstore.dk/shop/">Shop</a>
         <a href="events.html">Gallery & Events</a>
     </div>
-    
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
     </a>
-    <h1>Events & Gallery</h1>
-    </div>
-
-    <div class="events-pictures">
-    <div class="event-item">
-        <img src="images/events-1-shrunk.png" alt="events-1" class="clickable">
-        <div class="description" style="display: none;">
-            <p>Welcome party in Basement</p>
-        </div>
-    </div>
-    <div class="event-item">
-        <img src="images/events-button.png" alt="events-2" class="clickable">
-        <div class="description" style="display: none;">
-            <p>This is the description of the event!</p>
-        </div>
-    </div>
-    <div class="event-item">
-        <img src="images/barista-2-shrunk.png" alt="events-3" class="clickable">
-        <div class="description" style="display: none;">
-            <p>This is the description of the event!</p>
-        </div>
-    </div>
+    <h1>EVENTS</h1>
+</div>
+<!--I'm shoving the pictures in here, zero idea what I'm doing-->
+    <section class="events-pictures">
+        <img src="images/events-1-shrunk.png">
+        <img src="images/events-button.png">
+        <img src="images/barista-2-shrunk.png">
+    </section>
 
     <!-- Gallery Section-->
     <h1>GALLERY</h1>
-    <div class="gallery-pictures">
-        <img src="images/barista-shrunk.png" alt="barista-shrunk">
-        <img src="images/drink-shelve-shrunk.png" alt="drink-shelve-shrunk">
-        <img src="images/gallery-1-shrunk.png" alt="gallery-1-shrunk">
-    </div>
-    </div>
-       </main>
+    <section class="gallery-pictures">
+        <img src="images/barista-shrunk.png">
+        <img src="images/drink-shelve-shrunk.png">
+        <img src="images/gallery-1-shrunk.png">
+    </section>
 
      <!-- Footer Line Separater -->
         <footer>
         <hr>
-         <div class="footer-content">
         <p>PHONE     +45 86 20 15 33<br>WHATSAPP     +45 28 19 11 43E<br>MAIL     HELLO@CARTERSTORE.DK
         </p>
         <!-- Unordered List -->
@@ -71,7 +53,6 @@
             <li>PRIVACY</li>
             <li>SOCIAL</li>
         </ul>
-        </div>
         </footer>
         
     <script>
@@ -84,13 +65,6 @@ function myFunction() {
     x.style.display = "block";
   }
 }
-
-   const eventImg = document.getElementById('events-1');
-const descriptionBox = eventImg.nextElementSibling; // gets the description div right after the image
-
-eventImg.addEventListener('click', () => {
-    descriptionBox.style.display = descriptionBox.style.display === 'none' ? 'block' : 'none';
-});
     </script>
 </body>
 </html>
