@@ -236,4 +236,7 @@ hr {
         flex-direction: column;
         align-items: stretch;
     }
+    .topnav #myLinks a {
+        font-weight: 700;
+    }
 }

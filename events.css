@@ -210,6 +210,9 @@ header h3 a{
         flex-direction: column;
         align-items: stretch;
     }
+    .topnav #myLinks a {
+        font-weight: 700;
+    }
 
     .event-container img {
     max-width: 100%;
