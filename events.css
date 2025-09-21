@@ -133,14 +133,7 @@ header h3 a{
 .event-container.active .event-description {
   display: block;
 }
-
-
-
-
-
-
-
-        .topnav {
+.topnav {
     position: relative;
 }
 .topnav .globe-icon {
