@@ -65,6 +65,12 @@ hr {
  gap: 20px;
 }
 
+.coffee-1{
+  float: left;       /* push image to the left */
+  width: 233px;   /* set exact width */
+  height: 179px;  /* set exact height */
+}
+
 .menu-text {
   line-height: 2;
   text-align: left;
@@ -152,4 +158,41 @@ header h3 a{
     opacity: 0.7;
     letter-spacing: 1px;
     vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+     h1 {
+        font-size: clamp(24px, 8vw, 40px); /* Never smaller than 24px, scales up to 40px */
+        margin-top: 32px;
+        margin-bottom: 32px;
+        letter-spacing: 1px;
+        font-weight: 600; /* or 600 for semi-bold */
+    }
+    h2, h3 {
+        font-size: 14px;
+        margin: 3vw 0;
+    }
+    main {
+        width: 98%;
+        padding: 0;
+    }
+    .thin-text, .menu-text, p, li {
+        font-size: 4vw;
+    }
+    img, .button-pictures {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 10px;
+    }
+    .topnav {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
