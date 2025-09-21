@@ -5,7 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>menu</title>
     <link rel="stylesheet" href="menustyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+     <!-- <style>
+        .topnav {
+    position: relative;
+}
+.topnav .globe-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 14px 16px;
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+    z-index: 2;
+}
+.topnav .globe-icon:hover {
+    background: #ddd;
+    color: #000;
+}
+    </style> -->
+
 </head>
 <body>
 
@@ -15,18 +36,20 @@
         </header>
 
     <div class="topnav">
-        
-    <div id="myLinks">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="https://carterstore.dk/shop/">Shop</a>
-        <a href="events.html">Gallery & Events</a>
-    </div>
-    
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-    </a>
-    <h1>MENU</h1>
+        <a href="#" class="globe-icon" id="translateBtn" title="Translate">
+            <i class="fa fa-globe"></i>
+            <span id="langCode" style="margin-left:6px;">EN</span>
+        </a>
+        <div id="myLinks">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="https://carterstore.dk/shop/">Shop</a>
+            <a href="events.html">Gallery & Events</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <h1>MENU</h1>
     </div>
 
     <div class="menu-1">
@@ -71,7 +94,6 @@
 
 
     <script>
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function myFunction() {
   var x = document.getElementById("myLinks");
   if (x.style.display === "block") {
@@ -80,6 +102,62 @@ function myFunction() {
     x.style.display = "block";
   }
 }
+
+// Simple translation toggle for menu page
+const translations = {
+  en: {
+    menu: "MENU",
+    menu1: "Cappuccino    49<br>Latte                   53<br>Matcha              56",
+    menu2: "Chocolate croissant       39<br>Sandwich         45",
+    menu3: "Americano        45<br>Mocha                40<br>Macchiato         43",
+    menu4: "Affogato            43<br>Espresso           50<br>Chocolate  cake      40",
+    navHome: "Home",
+    navMenu: "Menu",
+    navShop: "Shop",
+    navEvents: "Gallery & Events"
+    
+  },
+  da: {
+    menu: "MENU",
+    menu1: "Cappuccino    49<br>Latte                   53<br>Matcha              56",
+    menu2: "Chokolade croissant      39<br>Sandwich         45",
+    menu3: "Americano        45<br>Mocha                40<br>Macchiato         43",
+    menu4: "Affogato            43<br>Espresso           50<br>Chokoladekage      40",
+    navHome: "Forside",
+    navMenu: "Menu",
+    navShop: "Butik",
+    navEvents: "Galleri & Events"
+  }
+};
+
+let currentLang = localStorage.getItem("lang") || "en";
+
+function setLanguage(lang) {
+  document.querySelector('.topnav h1').textContent = translations[lang].menu;
+  document.querySelectorAll('.menu-1 .menu-text')[0].innerHTML = translations[lang].menu1;
+  document.querySelectorAll('.menu-2 .menu-text')[0].innerHTML = translations[lang].menu2;
+  document.querySelectorAll('.menu-1 .menu-text')[1].innerHTML = translations[lang].menu3;
+  document.querySelectorAll('.menu-2 .menu-text')[1].innerHTML = translations[lang].menu4;
+  document.getElementById("langCode").textContent = lang.toUpperCase();
+
+  // Translate hamburger menu links
+  const navLinks = document.querySelectorAll('#myLinks a');
+  if (navLinks.length >= 4) {
+    navLinks[0].textContent = translations[lang].navHome;
+    navLinks[1].textContent = translations[lang].navMenu;
+    navLinks[2].textContent = translations[lang].navShop;
+    navLinks[3].textContent = translations[lang].navEvents;
+  }
+}
+
+setLanguage(currentLang);
+
+document.getElementById("translateBtn").addEventListener("click", function(e) {
+  e.preventDefault();
+  currentLang = currentLang === "en" ? "da" : "en";
+  localStorage.setItem("lang", currentLang);
+  setLanguage(currentLang);
+});
     </script>
 </body>
 </html>

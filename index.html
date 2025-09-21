@@ -11,7 +11,10 @@
        <main>
         <!-- HAMBURGER -->
     <div class="topnav">
-        
+    <a href="#" class="globe-icon" id="translateBtn" title="Translate">
+        <i class="fa fa-globe"></i>
+        <span id="langCode" style="margin-left:6px;">EN</span>
+    </a>
     <div id="myLinks" class="nav">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
@@ -89,14 +92,7 @@
         </footer>
     </main>
 
-
-
-
-
-
-
     <script>
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function myFunction() {
   var x = document.getElementById("myLinks");
   if (x.style.display === "block") {
@@ -105,6 +101,107 @@ function myFunction() {
     x.style.display = "block";
   }
 }
+
+// Simple translation toggle
+const translations = {
+  en: {
+    menu: "MENU",
+    shop: "SHOP",
+    about: "ABOUT US",
+    about1: "Founded to become your favorite multi-brand shopping destination, whether you are looking for luxurious bags and accessories, classic items for the wardrobe, contemporary fashion or innovative and upcoming brands, we at Carter are driven by the personal relationship and the opportunity to inspire.",
+    about2: "We are personally committed to everything we do and hands on to all tasks associated with running our business. We are passionate about creating good experiences in a beautiful setting.",
+    gallery: "GALLERY AND EVENTS",
+    findus: "WHERE TO FIND US",
+    address: `CARTER STORE<br>DENMARK<br>MØLLEGADE 5 – 8000 AARHUS C<br>ADMINISTRATION:<br><br>
+CAFE<br>MON-THU 08:00 – 18:00<br>FRI 08:00 – 18:00<br>SAT 09:00 – 18:00<br>
+SUN 09:00 – 17:00<br><br>SHOP<br>MON-FRI 11:00 – 17:30<br>SAT 11:00 – 16:00<br>
+SUN – CLOSED<br>`,
+    footerPhone: "PHONE     +45 86 20 15 33",
+    footerWhatsapp: "WHATSAPP     +45 28 19 11 43E",
+    footerMail: "MAIL     HELLO@CARTERSTORE.DK",
+    footerTerms: "TERMS",
+    footerPrivacy: "PRIVACY",
+    footerSocial: "SOCIAL",
+    navHome: "Home",
+    navMenu: "Menu",
+    navShop: "Shop",
+    navEvents: "Gallery & Events"
+  },
+  da: {
+    menu: "MENU",
+    shop: "BUTIK",
+    about: "OM OS",
+    about1: "Grundlagt for at blive din foretrukne multibrand shoppingdestination, uanset om du leder efter luksuriøse tasker og accessories, klassiske garderobeartikler, moderne mode eller innovative og kommende mærker, er vi hos Carter drevet af det personlige forhold og muligheden for at inspirere.",
+    about2: "Vi er personligt engagerede i alt, hvad vi gør, og hands-on med alle opgaver forbundet med at drive vores virksomhed. Vi brænder for at skabe gode oplevelser i smukke omgivelser.",
+    gallery: "GALLERI OG EVENTS",
+    findus: "HVOR FINDER DU OS",
+    address: `CARTER BUTIK<br>DANMARK<br>MØLLEGADE 5 – 8000 AARHUS C<br>ADMINISTRATION:<br><br>
+CAFÉ<br>MAN-TORS 08:00 – 18:00<br>FRE 08:00 – 18:00<br>LØR 09:00 – 18:00<br>
+SØN 09:00 – 17:00<br><br>BUTIK<br>MAN-FRE 11:00 – 17:30<br>LØR 11:00 – 16:00<br>
+SØN – LUKKET<br>`,
+    footerPhone: "TELEFON     +45 86 20 15 33",
+    footerWhatsapp: "WHATSAPP     +45 28 19 11 43E",
+    footerMail: "MAIL     HELLO@CARTERSTORE.DK",
+    footerTerms: "VILKÅR",
+    footerPrivacy: "PRIVATLIV",
+    footerSocial: "SOCIAL",
+    navHome: "Home",
+    navMenu: "Menu",
+    navShop: "Butik",
+    navEvents: "Galleri & Events"
+  }
+};
+
+let currentLang = localStorage.getItem("lang") || "en";
+
+function setLanguage(lang) {
+  document.querySelector('.menu-button .thin-text').textContent = translations[lang].menu;
+  document.querySelector('.shop-button .thin-text').textContent = translations[lang].shop;
+  document.querySelector('.about-us h2').textContent = translations[lang].about;
+  document.querySelector('.about-us .paragraph-1').textContent = translations[lang].about1;
+  document.querySelector('.about-us .paragraph-2').textContent = translations[lang].about2;
+  document.querySelector('.gallery-button h2').textContent = translations[lang].gallery;
+  document.querySelector('.find-us h2').textContent = translations[lang].findus;
+  document.getElementById("langCode").textContent = lang.toUpperCase();
+
+  // Translate hamburger menu links
+  const navLinks = document.querySelectorAll('#myLinks a');
+  if (navLinks.length >= 4) {
+    navLinks[0].textContent = translations[lang].navHome;
+    navLinks[1].textContent = translations[lang].navMenu;
+    navLinks[2].textContent = translations[lang].navShop;
+    navLinks[3].textContent = translations[lang].navEvents;
+  }
+
+  // Translate address
+  document.querySelector('.find-us p').innerHTML = translations[lang].address;
+
+  // Translate footer
+  document.querySelector('.footer-content p').innerHTML = `
+    ${translations[lang].footerPhone}<br>
+    ${translations[lang].footerWhatsapp}<br>
+    ${translations[lang].footerMail}
+  `;
+
+  const footerTerms = document.querySelector('.footer-content ul li:nth-child(1)');
+  const footerPrivacy = document.querySelector('.footer-content ul li:nth-child(2)');
+  const footerSocial = document.querySelector('.footer-content ul li:nth-child(3)');
+
+  if (footerTerms && footerPrivacy && footerSocial) {
+    footerTerms.textContent = translations[lang].footerTerms;
+    footerPrivacy.textContent = translations[lang].footerPrivacy;
+    footerSocial.textContent = translations[lang].footerSocial;
+  }
+}
+
+setLanguage(currentLang);
+
+document.getElementById("translateBtn").addEventListener("click", function(e) {
+  e.preventDefault();
+  currentLang = currentLang === "en" ? "da" : "en";
+  localStorage.setItem("lang", currentLang);
+  setLanguage(currentLang);
+});
     </script>
 </body>
 </html>

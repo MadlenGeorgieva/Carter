@@ -124,3 +124,32 @@ header h3 a{
   background-color: #ffffff;
   color: rgb(0, 0, 0);
 }
+
+
+        .topnav {
+    position: relative;
+}
+.topnav .globe-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 14px 16px;
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+    z-index: 2;
+}
+.topnav .globe-icon:hover {
+    background: #ddd;
+    color: #000;
+}
+
+
+
+#langCode {
+    font-size: 15px;
+    font-weight: 300;
+    opacity: 0.7;
+    letter-spacing: 1px;
+    vertical-align: middle;
+}
