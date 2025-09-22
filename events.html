@@ -111,15 +111,9 @@ const translations = {
     navEvents: "Gallery & Events",
     events: "EVENTS",
     gallery: "GALLERY",
-    desc1: `Join us for an immersive coffee tasting experience where you’ll 
-            discover the subtle flavors of beans from around the world. Our expert baristas will guide 
-            you through brewing techniques and aroma profiles. Perfect for coffee lovers of all levels!`,
-    desc2: `Enjoy a magical evening filled with live music performances by talented 
-            local artists. Relax, sip your favorite drink, and let the music set the perfect atmosphere. A night 
-            of entertainment you won’t want to miss!`,
-    desc3: `Learn the art of making the perfect cup of coffee in our hands-on barista training. 
-            From steaming milk to crafting latte art, this session is fun, interactive, and educational. Take home new skills 
-            to impress your friends and family!`
+    desc1: "Join us for an immersive coffee tasting experience where you’ll discover the subtle flavors of beans from around the world. Our expert baristas will guide you through brewing techniques and aroma profiles. Perfect for coffee lovers of all levels!",
+    desc2: "Enjoy a magical evening filled with live music performances by talented local artists. Relax, sip your favorite       drink, and let the music set the perfect atmosphere. A night of entertainment you won’t want to miss!",
+    desc3: "Learn the art of making the perfect cup of coffee in our hands-on barista training. From steaming milk to crafting latte art, this session is fun, interactive, and educational. Take home new skills to impress your friends and family!"
   },
   da: {
     navHome: "Forside",
@@ -128,20 +122,27 @@ const translations = {
     navEvents: "Galleri & Events",
     events: "EVENTS",
     gallery: "GALLERI",
-    desc1: `Deltag i en fordybende kaffe-smagning, hvor du opdager de subtile smagsnuancer fra bønner verden over. Vores dygtige baristaer guider dig gennem bryggeteknikker og aromaprofiler. Perfekt for kaffeelskere på alle niveauer!`,
-    desc2: `Nyd en magisk aften fyldt med livemusik fra talentfulde lokale kunstnere. Slap af, nyd din yndlingsdrik, og lad musikken skabe den perfekte stemning. En aften med underholdning, du ikke vil gå glip af!`,
-    desc3: `Lær kunsten at lave den perfekte kop kaffe på vores praktiske baristakursus. Fra at steame mælk til at lave latte art – sessionen er sjov, interaktiv og lærerig. Tag nye færdigheder med hjem og imponer venner og familie!`
+    desc1: "Deltag i en fordybende kaffe-smagning, hvor du opdager de subtile smagsnuancer fra bønner verden over. Vores dygtige baristaer guider dig gennem bryggeteknikker og aromaprofiler. Perfekt for kaffeelskere på alle niveauer!",
+    desc2: "Nyd en magisk aften fyldt med livemusik fra talentfulde lokale kunstnere. Slap af, nyd din yndlingsdrik, og lad musikken skabe den perfekte stemning. En aften med underholdning, du ikke vil gå glip af!",
+    desc3: "Lær kunsten at lave den perfekte kop kaffe på vores praktiske baristakursus. Fra at steame mælk til at lave latte art – sessionen er sjov, interaktiv og lærerig. Tag nye færdigheder med hjem og imponer venner og familie!"
   }
 };
 
 let currentLang = localStorage.getItem("lang") || "en";
 
+
 function setLanguage(lang) {
   document.querySelector('.topnav h1').textContent = translations[lang].events;
-  document.querySelector('h1 + section').previousElementSibling.textContent = translations[lang].gallery;
-  document.querySelectorAll('.event-description')[0].textContent = translations[lang].desc1;
-  document.querySelectorAll('.event-description')[1].textContent = translations[lang].desc2;
-  document.querySelectorAll('.event-description')[2].textContent = translations[lang].desc3;
+  // Update gallery section title if present
+  const galleryTitle = Array.from(document.querySelectorAll('h1')).find(h1 => h1.textContent.trim().toUpperCase() === 'GALLERY');
+  if (galleryTitle) galleryTitle.textContent = translations[lang].gallery;
+  // Update event descriptions
+  const eventDescs = document.querySelectorAll('.event-description');
+  if (eventDescs.length >= 3) {
+    eventDescs[0].textContent = translations[lang].desc1;
+    eventDescs[1].textContent = translations[lang].desc2;
+    eventDescs[2].textContent = translations[lang].desc3;
+  }
   document.getElementById("langCode").textContent = lang.toUpperCase();
 
   // Translate hamburger menu links
@@ -151,6 +152,19 @@ function setLanguage(lang) {
     navLinks[1].textContent = translations[lang].navMenu;
     navLinks[2].textContent = translations[lang].navShop;
     navLinks[3].textContent = translations[lang].navEvents;
+  }
+
+  // Translate footer if present
+  const footerP = document.querySelector('footer p');
+  if (footerP) {
+    footerP.innerHTML = `PHONE     +45 86 20 15 33<br>WHATSAPP     +45 28 19 11 43E<br>MAIL     HELLO@CARTERSTORE.DK`;
+    // You can add translation keys for these if needed, for now static as in original
+  }
+  const footerList = document.querySelectorAll('footer ul li');
+  if (footerList.length >= 3) {
+    footerList[0].textContent = lang === 'da' ? 'VILKÅR' : 'TERMS';
+    footerList[1].textContent = lang === 'da' ? 'PRIVATLIV' : 'PRIVACY';
+    footerList[2].textContent = lang === 'da' ? 'SOCIAL' : 'SOCIAL';
   }
 }
 
